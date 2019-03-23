@@ -36,7 +36,7 @@ class App extends Component {
       <div>
         <FlatList flats={flatInfo} selectFlat={this.selectFlat} selectedFlat={selectedFlat} />
         <div className="map-container">
-          <GoogleMapReact defaultCenter={this.center()} defaultZoom={12}>
+          <GoogleMapReact center={this.center()} defaultZoom={12}>
             {flatInfo.map(
               (flat) => {
                 return (
