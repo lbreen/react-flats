@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Flat from './flat';
 
-class FlatList extends Component {
-  render() {
-    return (
-      <div className="flat-list">
-        <Flat imageUrl="https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat1.jpg" />
-      </div>
-    );
-  }
-}
+const FlatList = ({ flats }) => {
+  return (
+    <div className="flat-list">
+      {flats.map((flat) => {
+        return (
+          <Flat
+            name={flat.name}
+            key={flat.name}
+            imageUrl={flat.imageUrl}
+            price={flat.price}
+            priceCurrency={flat.priceCurrency}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 export default FlatList;
