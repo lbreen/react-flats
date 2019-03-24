@@ -9,10 +9,12 @@ class Flat extends Component {
 
   render() {
     const {
-      name,
-      imageUrl,
-      price,
-      priceCurrency,
+      flat: {
+        name,
+        imageUrl,
+        price,
+        priceCurrency
+      },
       selected
     } = this.props;
 
@@ -20,7 +22,7 @@ class Flat extends Component {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${imageUrl})`
     };
     return (
-      <div className={`card${selected ? ' active' : ''}`} style={styles}>
+      <div className={`card ${selected ? ' active' : ''}`} style={styles}>
         <div className="card-category">
           {price}
           {priceCurrency}

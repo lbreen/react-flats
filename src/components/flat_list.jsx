@@ -8,11 +8,8 @@ const FlatList = ({ flats, selectedFlat, selectFlat }) => {
       {flats.map((flat, index) => {
         return (
           <Flat
-            name={flat.name}
+            flat={flat}
             key={flat.name}
-            imageUrl={flat.imageUrl}
-            price={flat.price}
-            priceCurrency={flat.priceCurrency}
             selected={flat.name === selectedFlat.name}
             selectFlat={selectFlat}
             index={index}
